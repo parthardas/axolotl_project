@@ -1,2 +1,2 @@
 # axolotl_project
- Finetuning with Axolotl config files
+ LLM Finetuning with Axolotl config files
