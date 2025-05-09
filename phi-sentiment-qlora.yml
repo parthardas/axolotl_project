@@ -10,19 +10,22 @@ load_in_4bit: true
 
 datasets:
   - #path: garage-bAInd/Open-Platypus
-    path: /teamspace/studios/this_studio/axolotl/sample-train-data.json
+    path: /workspace/data/sentiment.jsonl
     type: alpaca
 
 dataset_prepared_path:
-val_set_size: 0.05
-output_dir: ./outputs/phi-sft-out
+val_set_size: 5
+output_dir: /workspace/outputs/phi-sentiment-out
 
 sequence_len: 2048
 sample_packing: true
 pad_to_sequence_len: true
 
+#axolotl own suggestion
+eval_sample_packing: False
+
 adapter: qlora
-lora_model_dir:
+#lora_model_dir:
 lora_r: 64
 lora_alpha: 32
 lora_dropout: 0.05
@@ -34,15 +37,15 @@ wandb_watch:
 wandb_name:
 wandb_log_model:
 
-gradient_accumulation_steps: 1
-micro_batch_size: 2
+gradient_accumulation_steps: 2
+micro_batch_size: 4
 num_epochs: 1
 optimizer: adamw_torch_fused
 adam_beta2: 0.95
 adam_epsilon: 0.00001
 max_grad_norm: 1.0
 lr_scheduler: cosine
-learning_rate: 0.000003
+learning_rate: 0.0002
 
 bf16: auto
 #tf32: true
