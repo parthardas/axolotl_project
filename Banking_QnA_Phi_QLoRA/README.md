@@ -5,7 +5,7 @@ base_model: microsoft/phi-1_5
 tags:
 - generated_from_trainer
 datasets:
-- /workspace/data/alpaca_corrected_bankingqa.jsonl
+- bitext/Bitext-retail-banking-llm-chatbot-training-dataset
 model-index:
 - name: workspace/outputs/phi-bankingqa-out5
   results: []
